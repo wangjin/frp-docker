@@ -15,4 +15,4 @@ RUN set -x \
 
 EXPOSE 6000 7000 7500 8080 8443
 
-CMD [ "/frp/", "-c", "/etc/frp/frps.ini" ]
+CMD [ "/frps", "-c", "/etc/frp/frps.ini" ]
