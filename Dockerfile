@@ -12,8 +12,9 @@ RUN set -x \
 && chmod +x /usr/local/bin/frps \
 && mkdir /etc/frp \
 && mv frp_${FRP_VERSION}_linux_arm64/frps.ini /etc/frp \
-&& rm -rf frp_${FRP_VERSION}_linux_arm64* 
+&& rm -rf frp_${FRP_VERSION}_linux_arm64* \
+&& chmod +x entrypoint.sh
 
 EXPOSE 7000 7500 8080 8443
 
-CMD ["/usr/local/bin/frps","-c","/etc/frp/frps.ini"]
+ENTRYPOINT [ "entrypoint.sh" ]
